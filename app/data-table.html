@@ -1,0 +1,32 @@
+<table>
+  <thead>
+    <tr>
+      <th>Markets</th>
+      <th>Opening</th>
+      <th class=mid>Sell</th>
+      <th class=mid>Buy</th>
+      <th class=mid>Update</th>
+      <th class=mid>Change</th>
+      <th class=mid>% Change</th>
+      <th class=mid>High</th>
+      <th class=mid>Low</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="#cell of cells">
+      <td>
+        <span>{{cell.name}}</span>
+        <div [style.width.px]="cell.percentage" [style.opacity]="cell.volDecimal"></div>
+      </td>
+      <td class=number>{{ cell.openingLevel }}</td>
+      <td class='number red'>{{ cell.sellPrice }}</td>
+      <td class='number blue'>{{ cell.buyPrice }}</td>
+      <td class=number>{{ cell.update }}</td>
+      <td class=number>{{ cell.change }}</td>
+      <td class=number>{{ cell.percentChange }}</td>
+      <td class=number>{{ cell.high }}</td>
+      <td class=number>{{ cell.low }}</td>
+    </tr>
+  </tbody>
+</table>
+<div id="chart"></div>
