@@ -1,20 +1,30 @@
+var path = require('path');
+var webpack = require('webpack');
+
 module.exports = {
-  context: __dirname + '/app',
-  entry: './entry',
+  devtool: 'source-map',
+  context: path.join(__dirname, 'src'),
+  entry: './index',
   output: {
-    path: __dirname + '/dist',
+    path: path.join(__dirname, 'dist'),
     filename: 'bundle.js',
+    publicPath: '/static/'
   },
   module: {
-    loaders: [
-      {
-        test: /\.jsx?$/,
-        exclude: /(node_modules|bower_components)/,
-        loader: 'babel', // 'babel-loader' is also a legal name to reference
-        query: {
-          presets: ['es2015'],
-        },
+    loaders: [{
+      test: /\.jsx?$/,
+      exclude: /(node_modules)/,
+      loader: 'babel',
+      query: {
+        presets: [
+          require.resolve('babel-preset-es2015'),
+          require.resolve('babel-preset-react'),
+        ],
       },
-    ],
+    }]
+  },
+  resolve: {
+    extensions: [ '', '.js', '.jsx' ],
+    fallback: path.join(__dirname, "node_modules")
   },
 };
