@@ -1,0 +1,41 @@
+@font-face {
+  font-family: 'IBMVGA8';
+  src: url(fonts/ibm_vga8.woff);
+  font-weight: normal;
+  font-style: normal;
+}
+body {
+  font-family: 'IBMVGA8', sans-serif;
+  background: cornsilk;
+}
+body * {
+  font-size: 10px;
+}
+th {
+  text-align: left;
+}
+td {
+  padding-right: 10px;
+  position: relative;
+}
+td span {
+  position: relative;
+}
+.number {
+  text-align: right;
+}
+.mid {
+  text-align: center;
+}
+td div {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  transition: width 2s, opacity 2s;
+}
+.blue {
+  color: blue;
+}
+.red {
+  color: red;
+}
