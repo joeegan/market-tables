@@ -1,5 +1,6 @@
 {
-	"preset": 'airbnb',
-  "requireTrailingComma": false,
-   "excludeFiles": ['dist/**']
+  'preset': 'airbnb',
+  'requireTrailingComma': false,
+  'excludeFiles': ['dist/**'],
+  'requirePaddingNewLinesAfterBlocks': false
 }
