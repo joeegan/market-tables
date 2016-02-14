@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class Row extends Component {
+export default class Row extends Component {
   render() {
     var marketNodes = this.props.data.map(function(market) {
       return (
@@ -11,7 +11,7 @@ class Row extends Component {
           <td className='number'>{market.openingLevel}</td>
           <td className='number red'>{market.sellPrice}</td>
           <td className='number blue'>{market.buyPrice}</td>
-          <td className='number'>{market.update}</td>
+          <td className='number'>{market.updateTime}</td>
           <td className='number'>{market.change}</td>
           <td className='number'>{market.percentChange}</td>
           <td className='number'>{market.high}</td>
@@ -21,29 +21,6 @@ class Row extends Component {
     });
     return (
       <tbody>{marketNodes}</tbody>
-    );
-  }
-}
-
-export default class App extends Component {
-  render() {
-    return (
-      <table>
-        <thead>
-          <tr>
-            <th>Markets</th>
-            <th>Opening</th>
-            <th className='mid'>Sell</th>
-            <th className='mid'>Buy</th>
-            <th className='mid'>Update</th>
-            <th className='mid'>Change</th>
-            <th className='mid'>% Change</th>
-            <th className='mid'>High</th>
-            <th className='mid'>Low</th>
-          </tr>
-        </thead>
-        <Row data={this.props.data} />
-      </table>
     );
   }
 }

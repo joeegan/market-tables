@@ -1,8 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import Table from './table';
 import Market from 'market-faker';
-require('es6-promise').polyfill();
 import css from './styles.css';
 
 window.data = [
@@ -17,5 +16,5 @@ window.data = [
 
 (function animloop(){
   requestAnimationFrame(animloop);
-  ReactDOM.render(<App data={data} />, document.getElementById('root'));
+  ReactDOM.render(<Table data={data} />, document.getElementById('root'));
 })();
